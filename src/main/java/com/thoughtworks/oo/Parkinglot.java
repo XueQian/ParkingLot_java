@@ -6,10 +6,20 @@ import java.util.List;
 public class Parkinglot {
 
     private List<Car> parkedCars = new ArrayList<Car>();
+    private int remainingCount;
+
+    public Parkinglot(int remainingCount) {
+        this.remainingCount = remainingCount;
+    }
 
     public boolean park(Car car) {
 
-        parkedCars.add(car);
-        return true;
+        if (remainingCount > 0) {
+            remainingCount--;
+            parkedCars.add(car);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
