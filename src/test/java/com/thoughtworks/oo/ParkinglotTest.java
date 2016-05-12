@@ -35,6 +35,15 @@ public class ParkinglotTest {
     }
 
     @Test
+    public void shouldNotParkOneCarWhenTheCarExistInParkinglot() {
+
+        Parkinglot parkinglot = new Parkinglot(2);
+
+        assertTrue(parkinglot.park(new Car(1)));
+        assertFalse(parkinglot.park(new Car(1)));
+    }
+
+    @Test
     public void shouldUnParkOneValidCarCorrectly() {
 
         Parkinglot parkinglot = new Parkinglot(1);
@@ -46,7 +55,7 @@ public class ParkinglotTest {
     }
 
     @Test
-    public void shouldNotUnparkOneInvalidCar() {
+    public void shouldNotUnParkOneInvalidCar() {
 
         Parkinglot parkinglot = new Parkinglot(1);
 
