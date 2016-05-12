@@ -8,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ParkingLotTest {
+public class ParkinglotTest {
 
     private int validCarNumber1;
     private int validCarNumber2;
@@ -30,7 +30,7 @@ public class ParkingLotTest {
     @Test
     public void shouldParkOneCarCorrectly() {
 
-        ParkingLot parkingLot = new ParkingLot(parkingLotSpace);
+        Parkinglot parkingLot = new Parkinglot(parkingLotSpace);
 
         assertTrue(parkingLot.park(car1));
     }
@@ -38,7 +38,7 @@ public class ParkingLotTest {
     @Test
     public void shouldParkTwoCarsCorrectly() {
 
-        ParkingLot parkingLot = new ParkingLot(parkingLotSpace);
+        Parkinglot parkingLot = new Parkinglot(parkingLotSpace);
 
         assertTrue(parkingLot.park(car1));
         assertTrue(parkingLot.park(car2));
@@ -47,7 +47,7 @@ public class ParkingLotTest {
     @Test
     public void shouldNotParkCarWhenParkingLotIsFull() {
 
-        ParkingLot parkingLot = new ParkingLot(0);
+        Parkinglot parkingLot = new Parkinglot(0);
 
         assertFalse(parkingLot.park(car1));
     }
@@ -55,7 +55,7 @@ public class ParkingLotTest {
     @Test
     public void shouldNotParkOneCarWhenTheCarExistInParkinglot() {
 
-        ParkingLot parkingLot = new ParkingLot(parkingLotSpace);
+        Parkinglot parkingLot = new Parkinglot(parkingLotSpace);
 
         assertTrue(parkingLot.park(car1));
         assertFalse(parkingLot.park(car1));
@@ -64,7 +64,7 @@ public class ParkingLotTest {
     @Test
     public void shouldUnParkOneValidCarCorrectly() {
 
-        ParkingLot parkingLot = new ParkingLot(parkingLotSpace);
+        Parkinglot parkingLot = new Parkinglot(parkingLotSpace);
         parkingLot.park(car1);
 
         assertThat(parkingLot.unPark(validCarNumber1), is(car1));
@@ -73,7 +73,7 @@ public class ParkingLotTest {
     @Test
     public void shouldNotUnParkOneInvalidCar() {
 
-        ParkingLot parkingLot = new ParkingLot(parkingLotSpace);
+        Parkinglot parkingLot = new Parkinglot(parkingLotSpace);
         parkingLot.park(car1);
 
         assertThat(parkingLot.unPark(invalidCarNumber), is((Car) null));

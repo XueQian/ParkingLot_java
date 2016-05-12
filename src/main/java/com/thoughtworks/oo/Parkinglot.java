@@ -3,24 +3,27 @@ package com.thoughtworks.oo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingLot {
+public class Parkinglot {
 
     private List<Car> parkedCars = new ArrayList<Car>();
     private int remainingCount;
 
-    public ParkingLot(int remainingCount) {
+    public Parkinglot(int remainingCount) {
         this.remainingCount = remainingCount;
     }
 
     public boolean park(Car car) {
 
         if (remainingCount > 0 && !isCarExist(car.getNumber())) {
-            remainingCount--;
-            parkedCars.add(car);
+            parkOneCar(car);
             return true;
-        } else {
-            return false;
         }
+        return false;
+    }
+
+    private void parkOneCar(Car car) {
+        remainingCount--;
+        parkedCars.add(car);
     }
 
     public Car unPark(int number) {
