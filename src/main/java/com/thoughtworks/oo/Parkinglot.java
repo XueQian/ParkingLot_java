@@ -30,6 +30,7 @@ public class Parkinglot {
 
         for (Car car : parkedCars) {
             if (number == car.getNumber()) {
+                parkedCars.remove(car);
                 return car;
             }
         }

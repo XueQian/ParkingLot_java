@@ -78,4 +78,14 @@ public class ParkinglotTest {
 
         assertThat(parkingLot.unPark(invalidCarNumber), is((Car) null));
     }
+
+    @Test
+    public void shouldParkOneCarThenUnParkTheCarThenParkTheCarAgainCorrectly() {
+
+        Parkinglot parkinglot = new Parkinglot(parkingLotSpace);
+        parkinglot.park(car1);
+        parkinglot.unPark(validCarNumber1);
+
+        assertTrue(parkinglot.park(car1));
+    }
 }
