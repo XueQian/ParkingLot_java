@@ -1,0 +1,7 @@
+.gradle
+gradle
+*.bat
+*.iml
+*.ipr
+*.iws
+
