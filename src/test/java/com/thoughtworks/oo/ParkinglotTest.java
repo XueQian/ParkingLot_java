@@ -7,61 +7,61 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class ParkinglotTest {
+public class ParkingLotTest {
 
     @Test
     public void shouldParkOneCarCorrectly() {
 
-        Parkinglot parkinglot = new Parkinglot(1);
+        ParkingLot parkingLot = new ParkingLot(1);
 
-        assertTrue(parkinglot.park(new Car(1)));
+        assertTrue(parkingLot.park(new Car(1)));
     }
 
     @Test
     public void shouldParkTwoCarsCorrectly() {
 
-        Parkinglot parkinglot = new Parkinglot(2);
+        ParkingLot parkingLot = new ParkingLot(2);
 
-        assertTrue(parkinglot.park(new Car(1)));
-        assertTrue(parkinglot.park(new Car(2)));
+        assertTrue(parkingLot.park(new Car(1)));
+        assertTrue(parkingLot.park(new Car(2)));
     }
 
     @Test
     public void shouldNotParkCarWhenParkingLotIsFull() {
 
-        Parkinglot parkinglot = new Parkinglot(0);
+        ParkingLot parkingLot = new ParkingLot(0);
 
-        assertFalse(parkinglot.park(new Car(1)));
+        assertFalse(parkingLot.park(new Car(1)));
     }
 
     @Test
     public void shouldNotParkOneCarWhenTheCarExistInParkinglot() {
 
-        Parkinglot parkinglot = new Parkinglot(2);
+        ParkingLot parkingLot = new ParkingLot(2);
 
-        assertTrue(parkinglot.park(new Car(1)));
-        assertFalse(parkinglot.park(new Car(1)));
+        assertTrue(parkingLot.park(new Car(1)));
+        assertFalse(parkingLot.park(new Car(1)));
     }
 
     @Test
     public void shouldUnParkOneValidCarCorrectly() {
 
-        Parkinglot parkinglot = new Parkinglot(1);
+        ParkingLot parkingLot = new ParkingLot(1);
 
         Car car = new Car(1);
-        parkinglot.park(car);
+        parkingLot.park(car);
 
-        assertThat(parkinglot.unPark(1), is(car));
+        assertThat(parkingLot.unPark(1), is(car));
     }
 
     @Test
     public void shouldNotUnParkOneInvalidCar() {
 
-        Parkinglot parkinglot = new Parkinglot(1);
+        ParkingLot parkingLot = new ParkingLot(1);
 
         Car car = new Car(1);
-        parkinglot.park(car);
+        parkingLot.park(car);
 
-        assertThat(parkinglot.unPark(2), is((Car) null));
+        assertThat(parkingLot.unPark(2), is((Car) null));
     }
 }

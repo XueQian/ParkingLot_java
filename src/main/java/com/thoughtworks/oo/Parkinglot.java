@@ -3,12 +3,12 @@ package com.thoughtworks.oo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Parkinglot {
+public class ParkingLot {
 
     private List<Car> parkedCars = new ArrayList<Car>();
     private int remainingCount;
 
-    public Parkinglot(int remainingCount) {
+    public ParkingLot(int remainingCount) {
         this.remainingCount = remainingCount;
     }
 
