@@ -24,6 +24,12 @@ public class Parkinglot {
     }
 
     public Car unPark(int number) {
-        return parkedCars.get(0);
+
+        for (Car car : parkedCars) {
+            if (number == car.getNumber()) {
+                return car;
+            }
+        }
+        return null;
     }
 }
