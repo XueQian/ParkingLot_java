@@ -2,6 +2,8 @@ package com.thoughtworks.oo;
 
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -30,5 +32,16 @@ public class ParkinglotTest {
         Parkinglot parkinglot = new Parkinglot(0);
 
         assertFalse(parkinglot.park(new Car(1)));
+    }
+
+    @Test
+    public void shouldUnParkOneValidCarCorrectly() {
+
+        Parkinglot parkinglot = new Parkinglot(1);
+
+        Car car = new Car(1);
+        parkinglot.park(car);
+
+        assertThat(parkinglot.unPark(1), is(car));
     }
 }

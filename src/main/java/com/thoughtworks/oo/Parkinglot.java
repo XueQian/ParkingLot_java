@@ -22,4 +22,8 @@ public class Parkinglot {
             return false;
         }
     }
+
+    public Car unPark(int number) {
+        return parkedCars.get(0);
+    }
 }
