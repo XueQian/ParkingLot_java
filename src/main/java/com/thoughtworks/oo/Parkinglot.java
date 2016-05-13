@@ -14,7 +14,7 @@ public class Parkinglot {
 
     public boolean park(Car car) {
 
-        if (remainingCount > 0 && !isCarExist(car.getNumber())) {
+        if (remainingCount > 0) {
             parkOneCar(car);
             return true;
         }
@@ -35,15 +35,5 @@ public class Parkinglot {
             }
         }
         return null;
-    }
-
-    private Boolean isCarExist(int number) {
-
-        for (Car car : parkedCars) {
-            if (number == car.getNumber()) {
-                return true;
-            }
-        }
-        return false;
     }
 }

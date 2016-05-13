@@ -53,15 +53,6 @@ public class ParkinglotTest {
     }
 
     @Test
-    public void shouldNotParkOneCarWhenTheCarExistInParkinglot() {
-
-        Parkinglot parkingLot = new Parkinglot(parkingLotSpace);
-
-        assertTrue(parkingLot.park(car1));
-        assertFalse(parkingLot.park(car1));
-    }
-
-    @Test
     public void shouldUnParkOneValidCarCorrectly() {
 
         Parkinglot parkingLot = new Parkinglot(parkingLotSpace);
