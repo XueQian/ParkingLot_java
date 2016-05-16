@@ -36,4 +36,8 @@ public class Parkinglot {
         }
         return null;
     }
+
+    public boolean isFull() {
+        return remainingCount > 0;
+    }
 }

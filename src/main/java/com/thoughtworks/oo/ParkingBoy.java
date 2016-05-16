@@ -10,7 +10,14 @@ public class ParkingBoy {
         this.parkinglots = parkinglots;
     }
 
-    public boolean park(Car car) {
-        return true;
+    public int park(Car car) {
+
+        Parkinglot parkinglot1 = parkinglots.stream().
+                filter(Parkinglot::isFull)
+                .findFirst()
+                .orElse(null);
+
+        parkinglot1.park(car);
+        return parkinglots.indexOf(parkinglot1);
     }
 }
