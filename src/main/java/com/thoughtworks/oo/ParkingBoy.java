@@ -31,6 +31,9 @@ public class ParkingBoy {
                 .findAny()
                 .orElse(null);
 
+        if(parkinglot == null){
+            return null;
+        }
         return parkinglot.unPark(number);
     }
 }

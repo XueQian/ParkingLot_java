@@ -54,4 +54,15 @@ public class ParkingBoyTest {
 
         assertThat(parkingBoy.unPark(1), is(car));
     }
+
+    @Test
+    public void shouldNotUnParkOneInvalidCarCorrectly() {
+
+        List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
+        parkinglots.add(new Parkinglot(2));
+        ParkingBoy parkingBoy = new ParkingBoy(parkinglots);
+        parkingBoy.park(new Car(1));
+
+        assertThat(parkingBoy.unPark(2), is((Car) null));
+    }
 }
