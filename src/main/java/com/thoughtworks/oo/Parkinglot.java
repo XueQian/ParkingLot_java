@@ -37,6 +37,15 @@ public class Parkinglot {
         return null;
     }
 
+    public boolean isCarExist(int number) {
+
+        Car car = parkedCars.stream()
+                .filter(car1 -> car1.getNumber() == number)
+                .findAny()
+                .orElse(null);
+        return car != null;
+    }
+
     public boolean isFull() {
         return remainingCount > 0;
     }

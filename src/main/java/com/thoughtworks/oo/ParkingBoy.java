@@ -12,8 +12,8 @@ public class ParkingBoy {
 
     public int park(Car car) {
 
-        Parkinglot parkinglot = parkinglots.stream().
-                filter(Parkinglot::isFull)
+        Parkinglot parkinglot = parkinglots.stream()
+                .filter(Parkinglot::isFull)
                 .findFirst()
                 .orElse(null);
 
@@ -22,5 +22,15 @@ public class ParkingBoy {
         }
         parkinglot.park(car);
         return parkinglots.indexOf(parkinglot);
+    }
+
+    public Car unPark(int number) {
+
+        Parkinglot parkinglot = parkinglots.stream()
+                .filter(parkinglot1 -> parkinglot1.isCarExist(number))
+                .findAny()
+                .orElse(null);
+
+        return parkinglot.unPark(number);
     }
 }
