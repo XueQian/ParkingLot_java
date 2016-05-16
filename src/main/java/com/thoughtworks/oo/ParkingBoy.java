@@ -12,12 +12,15 @@ public class ParkingBoy {
 
     public int park(Car car) {
 
-        Parkinglot parkinglot1 = parkinglots.stream().
+        Parkinglot parkinglot = parkinglots.stream().
                 filter(Parkinglot::isFull)
                 .findFirst()
                 .orElse(null);
 
-        parkinglot1.park(car);
-        return parkinglots.indexOf(parkinglot1);
+        if (parkinglot == null) {
+            return -1;
+        }
+        parkinglot.park(car);
+        return parkinglots.indexOf(parkinglot);
     }
 }

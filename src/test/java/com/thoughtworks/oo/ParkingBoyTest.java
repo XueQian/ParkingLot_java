@@ -31,4 +31,15 @@ public class ParkingBoyTest {
 
         assertThat(parkingBoy.park(new Car(1)), is(1));
     }
+
+    @Test
+    public void shouldNotParkCarWhenAllParkingLotIsFull() {
+
+        List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
+        parkinglots.add(new Parkinglot(0));
+        parkinglots.add(new Parkinglot(0));
+        ParkingBoy parkingBoy = new ParkingBoy(parkinglots);
+
+        assertThat(parkingBoy.park(new Car(1)), is(-1));
+    }
 }
