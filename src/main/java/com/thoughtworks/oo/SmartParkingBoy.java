@@ -15,6 +15,10 @@ public class SmartParkingBoy {
 
         Parkinglot parkinglot = Collections
                 .max(parkinglots, Comparator.comparing(Parkinglot::getRemainingCount));
+
+        if (parkinglot.getRemainingCount() == 0) {
+            return -1;
+        }
         parkinglot.park(car);
         return parkinglots.indexOf(parkinglot);
     }
