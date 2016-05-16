@@ -6,6 +6,11 @@ import java.util.List;
 public class Parkinglot {
 
     private List<Car> parkedCars = new ArrayList<Car>();
+
+    public int getRemainingCount() {
+        return remainingCount;
+    }
+
     private int remainingCount;
 
     public Parkinglot(int remainingCount) {

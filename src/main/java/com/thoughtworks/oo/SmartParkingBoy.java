@@ -1,5 +1,7 @@
 package com.thoughtworks.oo;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class SmartParkingBoy {
@@ -9,7 +11,11 @@ public class SmartParkingBoy {
         this.parkinglots = parkinglots;
     }
 
-    public boolean park(Car car) {
-        return true;
+    public int park(Car car) {
+
+        Parkinglot parkinglot = Collections
+                .max(parkinglots, Comparator.comparing(Parkinglot::getRemainingCount));
+        parkinglot.park(car);
+        return parkinglots.indexOf(parkinglot);
     }
 }
