@@ -2,11 +2,11 @@ package com.thoughtworks.oo;
 
 import java.util.List;
 
-public class ParkingBoy {
+public class NormalParkingBoy {
 
     private List<Parkinglot> parkinglots;
 
-    public ParkingBoy(List<Parkinglot> parkinglots) {
+    public NormalParkingBoy(List<Parkinglot> parkinglots) {
         this.parkinglots = parkinglots;
     }
 
