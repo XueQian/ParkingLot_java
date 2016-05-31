@@ -11,6 +11,11 @@ public class Parkinglot {
         return remainingCount;
     }
 
+    public double getRemainingSpaceRate() {
+        int count = remainingCount + parkedCars.size();
+        return ((double) remainingCount) / count;
+    }
+
     private int remainingCount;
 
     public Parkinglot(int remainingCount) {
