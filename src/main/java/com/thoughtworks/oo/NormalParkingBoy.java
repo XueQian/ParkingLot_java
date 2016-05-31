@@ -4,7 +4,7 @@ import java.util.List;
 
 public class NormalParkingBoy {
 
-    private List<Parkinglot> parkinglots;
+    protected List<Parkinglot> parkinglots;
 
     public NormalParkingBoy(List<Parkinglot> parkinglots) {
         this.parkinglots = parkinglots;

@@ -4,12 +4,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SuperParkingBoy {
-
-    private List<Parkinglot> parkinglots;
+public class SuperParkingBoy extends NormalParkingBoy {
 
     public SuperParkingBoy(List<Parkinglot> parkinglots) {
-        this.parkinglots = parkinglots;
+        super(parkinglots);
     }
 
     public int park(Car car) {
