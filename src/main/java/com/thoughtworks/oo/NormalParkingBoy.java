@@ -17,7 +17,7 @@ public class NormalParkingBoy {
     public int park(Car car) {
         Parkinglot parkinglot = parkStrategy.getParkingLot(parkinglots);
 
-        if (parkinglot == null) {
+        if (parkinglot == null || parkinglot.getRemainingCount() == 0) {
             return -1;
         }
         parkinglot.park(car);

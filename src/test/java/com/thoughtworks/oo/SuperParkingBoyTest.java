@@ -26,7 +26,7 @@ public class SuperParkingBoyTest {
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(2));
 
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots, superParkingBoyStrategy);
+        NormalParkingBoy superParkingBoy = new NormalParkingBoy(parkinglots, superParkingBoyStrategy);
 
         assertThat(superParkingBoy.park(new Car(1)), is(0));
     }
@@ -42,7 +42,7 @@ public class SuperParkingBoyTest {
         parkinglot1.park(new Car(3));
         parkinglots.add(parkinglot);
         parkinglots.add(parkinglot1);
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots, superParkingBoyStrategy);
+        NormalParkingBoy superParkingBoy = new NormalParkingBoy(parkinglots, superParkingBoyStrategy);
 
         assertThat(superParkingBoy.park(new Car(4)), is(1));
     }
@@ -52,7 +52,7 @@ public class SuperParkingBoyTest {
 
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(0));
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots, superParkingBoyStrategy);
+        NormalParkingBoy superParkingBoy = new NormalParkingBoy(parkinglots, superParkingBoyStrategy);
 
         assertThat(superParkingBoy.park(new Car(1)), is(-1));
     }
