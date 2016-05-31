@@ -2,7 +2,7 @@ package com.thoughtworks.oo;
 
 import java.util.List;
 
-public class NormalParkingBoy {
+public class NormalParkingBoy implements ParkingBoy {
 
     private List<Parkinglot> parkinglots;
 
@@ -10,6 +10,7 @@ public class NormalParkingBoy {
         this.parkinglots = parkinglots;
     }
 
+    @Override
     public int park(Car car) {
 
         Parkinglot parkinglot = parkinglots.stream()
@@ -31,7 +32,7 @@ public class NormalParkingBoy {
                 .findAny()
                 .orElse(null);
 
-        if(parkinglot == null){
+        if (parkinglot == null) {
             return null;
         }
         return parkinglot.unPark(number);
