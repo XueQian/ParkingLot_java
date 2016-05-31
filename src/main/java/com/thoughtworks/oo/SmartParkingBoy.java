@@ -4,14 +4,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SmartParkingBoy implements ParkingBoy{
+public class SmartParkingBoy {
     private List<Parkinglot> parkinglots;
 
     public SmartParkingBoy(List<Parkinglot> parkinglots) {
         this.parkinglots = parkinglots;
     }
 
-    @Override
     public int park(Car car) {
 
         Parkinglot parkinglot = Collections

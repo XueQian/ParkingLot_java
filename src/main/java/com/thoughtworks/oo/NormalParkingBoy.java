@@ -2,7 +2,7 @@ package com.thoughtworks.oo;
 
 import java.util.List;
 
-public class NormalParkingBoy implements ParkingBoy {
+public class NormalParkingBoy {
 
     private List<Parkinglot> parkinglots;
 
@@ -10,7 +10,6 @@ public class NormalParkingBoy implements ParkingBoy {
         this.parkinglots = parkinglots;
     }
 
-    @Override
     public int park(Car car) {
 
         Parkinglot parkinglot = parkinglots.stream()
