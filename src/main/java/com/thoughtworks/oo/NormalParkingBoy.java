@@ -1,5 +1,7 @@
 package com.thoughtworks.oo;
 
+import com.thoughtworks.oo.strategy.NormalParkingBoyStrategy;
+
 import java.util.List;
 
 public class NormalParkingBoy {
@@ -11,11 +13,8 @@ public class NormalParkingBoy {
     }
 
     public int park(Car car) {
-
-        Parkinglot parkinglot = parkinglots.stream()
-                .filter(Parkinglot::isFull)
-                .findFirst()
-                .orElse(null);
+        NormalParkingBoyStrategy parkStrategy = new NormalParkingBoyStrategy();
+        Parkinglot parkinglot = parkStrategy.getParkingLot(parkinglots);
 
         if (parkinglot == null) {
             return -1;

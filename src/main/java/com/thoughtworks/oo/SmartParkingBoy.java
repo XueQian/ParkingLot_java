@@ -1,7 +1,8 @@
 package com.thoughtworks.oo;
 
-import java.util.Collections;
-import java.util.Comparator;
+import com.thoughtworks.oo.strategy.ParkStrategy;
+import com.thoughtworks.oo.strategy.SmartParkingBoyStrategy;
+
 import java.util.List;
 
 public class SmartParkingBoy extends NormalParkingBoy {
@@ -12,8 +13,8 @@ public class SmartParkingBoy extends NormalParkingBoy {
 
     public int park(Car car) {
 
-        Parkinglot parkinglot = Collections
-                .max(parkinglots, Comparator.comparing(Parkinglot::getRemainingCount));
+        ParkStrategy parkStrategy = new SmartParkingBoyStrategy();
+        Parkinglot parkinglot = parkStrategy.getParkingLot(parkinglots);
 
         if (parkinglot.getRemainingCount() == 0) {
             return -1;
