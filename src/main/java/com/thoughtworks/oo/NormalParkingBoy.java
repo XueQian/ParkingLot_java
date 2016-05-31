@@ -1,19 +1,20 @@
 package com.thoughtworks.oo;
 
-import com.thoughtworks.oo.strategy.NormalParkingBoyStrategy;
+import com.thoughtworks.oo.strategy.ParkStrategy;
 
 import java.util.List;
 
 public class NormalParkingBoy {
 
     protected List<Parkinglot> parkinglots;
+    protected ParkStrategy parkStrategy;
 
-    public NormalParkingBoy(List<Parkinglot> parkinglots) {
+    public NormalParkingBoy(List<Parkinglot> parkinglots, ParkStrategy parkStrategy) {
         this.parkinglots = parkinglots;
+        this.parkStrategy = parkStrategy;
     }
 
     public int park(Car car) {
-        NormalParkingBoyStrategy parkStrategy = new NormalParkingBoyStrategy();
         Parkinglot parkinglot = parkStrategy.getParkingLot(parkinglots);
 
         if (parkinglot == null) {

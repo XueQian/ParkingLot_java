@@ -1,5 +1,8 @@
 package com.thoughtworks.oo;
 
+import com.thoughtworks.oo.strategy.ParkStrategy;
+import com.thoughtworks.oo.strategy.SuperParkingBoyStrategy;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -10,13 +13,20 @@ import static org.junit.Assert.assertThat;
 
 public class SuperParkingBoyTest {
 
+    private ParkStrategy superParkingBoyStrategy;
+
+    @Before
+    public void setUp() {
+        superParkingBoyStrategy = new SuperParkingBoyStrategy();
+    }
+
     @Test
     public void shouldParkOneCarCorrectly() {
 
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(2));
 
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots);
+        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots, superParkingBoyStrategy);
 
         assertThat(superParkingBoy.park(new Car(1)), is(0));
     }
@@ -32,7 +42,7 @@ public class SuperParkingBoyTest {
         parkinglot1.park(new Car(3));
         parkinglots.add(parkinglot);
         parkinglots.add(parkinglot1);
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots);
+        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots, superParkingBoyStrategy);
 
         assertThat(superParkingBoy.park(new Car(4)), is(1));
     }
@@ -42,7 +52,7 @@ public class SuperParkingBoyTest {
 
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(0));
-        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots);
+        SuperParkingBoy superParkingBoy = new SuperParkingBoy(parkinglots, superParkingBoyStrategy);
 
         assertThat(superParkingBoy.park(new Car(1)), is(-1));
     }
