@@ -7,4 +7,23 @@
 4.`open parkinglot.ipr`
 
 
+parkingBoy + interface
+interface
+use interface where possible
+option 提示可选 option+_
+
+手工在parkingManager implements interface
+同superParkingManager
+
+shift+f10  所有测试
+
+constructor replace constructor with factory method  --> private
+use interface where possible
+更改superManager --> manager
+inline static method
+
+
+
+
+
 
