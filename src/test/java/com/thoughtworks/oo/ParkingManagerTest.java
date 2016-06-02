@@ -18,13 +18,13 @@ public class ParkingManagerTest {
         List<Parkinglot> parkinglots = new ArrayList<>();
         parkinglots.add(parkingLot);
 
-        NormalParkingBoy normalParkingBoy = new NormalParkingBoy(parkinglots, new NormalParkingBoyStrategy());
-        List<NormalParkingBoy> parkingBoys = new ArrayList<>();
+        Parkable normalParkingBoy = new NormalParkingBoy(parkinglots, new NormalParkingBoyStrategy());
+        List<Parkable> parkingBoys = new ArrayList<>();
         parkingBoys.add(normalParkingBoy);
 
-        ParkingManager parkingManager = new ParkingManager(parkingBoys);
+        Parkable parkable = new ParkingManager(parkingBoys);
 
-        assertThat(parkingManager.park(new Car(1)), is(0));
+        assertThat(parkable.park(new Car(1)), is(0));
     }
 
 }

@@ -4,7 +4,7 @@ import com.thoughtworks.oo.strategy.ParkStrategy;
 
 import java.util.List;
 
-public class NormalParkingBoy {
+public class NormalParkingBoy implements Parkable {
 
     protected List<Parkinglot> parkinglots;
     protected ParkStrategy parkStrategy;

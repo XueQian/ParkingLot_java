@@ -16,6 +16,7 @@ option 提示可选 option+_
 同superParkingManager
 
 shift+f10  所有测试
+command+shift+f10 到包上,跑所有测试
 
 constructor replace constructor with factory method  --> private
 use interface where possible
