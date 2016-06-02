@@ -27,4 +27,23 @@ public class ParkingManagerTest {
         assertThat(parkable.park(new Car(1)), is(0));
     }
 
+    @Test
+    public void shouldManageParkingManagerCorrectly() {
+
+        Parkinglot parkingLot = new Parkinglot(3);
+        List<Parkinglot> parkinglots = new ArrayList<>();
+        parkinglots.add(parkingLot);
+
+        Parkable normalParkingBoy = new NormalParkingBoy(parkinglots, new NormalParkingBoyStrategy());
+        List<Parkable> parkingBoys = new ArrayList<>();
+        parkingBoys.add(normalParkingBoy);
+
+        Parkable parkable = new ParkingManager(parkingBoys);
+        List<Parkable> parkables = new ArrayList<>();
+        parkables.add(parkable);
+
+        Parkable superParkingManager = new ParkingManager(parkables);
+
+        assertThat(superParkingManager.park(new Car(1)), is(0));
+    }
 }
