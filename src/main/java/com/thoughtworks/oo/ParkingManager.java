@@ -18,4 +18,13 @@ public class ParkingManager implements Parkable {
         }
         return -1;
     }
+
+    @Override
+    public void print() {
+
+        System.out.println("parkingManager:");
+        parkingBoyList.stream()
+                .peek(parkingBoy -> System.out.println("-parkingBoy" + parkingBoyList.indexOf(parkingBoy) + ":"))
+                .forEach(Parkable::print);
+    }
 }

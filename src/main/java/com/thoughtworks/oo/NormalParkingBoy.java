@@ -24,6 +24,13 @@ public class NormalParkingBoy implements Parkable {
         return parkinglots.indexOf(parkinglot);
     }
 
+    @Override
+    public void print() {
+        parkinglots.forEach(
+                parkinglot -> System.out.println("--parkinglot" + parkinglots.indexOf(parkinglot) + ":")
+        );
+    }
+
     public Car unPark(int number) {
 
         Parkinglot parkinglot = parkinglots.stream()
