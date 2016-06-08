@@ -26,6 +26,16 @@ inline static method
 tools->create command-line launcher idea .打开文件夹
 
 
+parkingManager:
+"ParkManager:\n" +
+                "-ParkBoy:\n" +
+                "--ParkLot(0/2)\n" +
+                "--ParkLot(0/2)\n" +
+                "-ParkBoy:\n" +
+                "--ParkLot(0/2)\n" +
+                "--ParkLot(0/2)\n"
+
+
 
 
 
