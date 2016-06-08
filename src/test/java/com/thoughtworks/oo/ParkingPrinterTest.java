@@ -30,7 +30,7 @@ public class ParkingPrinterTest {
         parkingBoys.add(new NormalParkingBoy(new ArrayList<>(), null));
         ParkingManager parkingManager = new ParkingManager(parkingBoys);
 
-        ParkingPrinter.print(parkingManager);
+        parkingManager.print();
         assertThat(outContent.toString(), is("parkingManager:\n" +
                 "-parkingBoy0:\n" +
                 "-parkingBoy1:\n"));
@@ -57,7 +57,7 @@ public class ParkingPrinterTest {
         parkingBoys.add(new NormalParkingBoy(parkinglots2, null));
         ParkingManager parkingManager = new ParkingManager(parkingBoys);
 
-        ParkingPrinter.print(parkingManager);
+        parkingManager.print();
 
         assertThat(outContent.toString(), is("parkingManager:\n" +
                 "-parkingBoy0:\n" +
