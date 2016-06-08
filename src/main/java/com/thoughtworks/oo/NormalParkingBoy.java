@@ -27,7 +27,14 @@ public class NormalParkingBoy implements Parkable {
     @Override
     public void print() {
         parkinglots.forEach(
-                parkinglot -> System.out.println("--parkinglot" + parkinglots.indexOf(parkinglot) + ":")
+                parkinglot -> System.out.println("--parkinglot"
+                        + parkinglots.indexOf(parkinglot)
+                        + "("
+                        + parkinglot.getRemainingCount()
+                        + "/"
+                        + parkinglot.getTotalCount()
+                        + ")"
+                        + ":")
         );
     }
 
