@@ -18,7 +18,7 @@ public class ParkingManagerTest {
         List<Parkinglot> parkinglots = new ArrayList<>();
         parkinglots.add(parkingLot);
 
-        Parkable normalParkingBoy = new NormalParkingBoy(parkinglots, new NormalParkingBoyStrategy());
+        Parkable normalParkingBoy = new ParkingBoy(parkinglots, new NormalParkingBoyStrategy());
         List<Parkable> parkingBoys = new ArrayList<>();
         parkingBoys.add(normalParkingBoy);
 
@@ -34,7 +34,7 @@ public class ParkingManagerTest {
         List<Parkinglot> parkinglots = new ArrayList<>();
         parkinglots.add(parkingLot);
 
-        Parkable normalParkingBoy = new NormalParkingBoy(parkinglots, new NormalParkingBoyStrategy());
+        Parkable normalParkingBoy = new ParkingBoy(parkinglots, new NormalParkingBoyStrategy());
         List<Parkable> parkingBoys = new ArrayList<>();
         parkingBoys.add(normalParkingBoy);
 

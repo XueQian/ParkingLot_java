@@ -24,7 +24,7 @@ public class NormalParkingBoyTest {
 
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(2));
-        Parkable parkingBoy = new NormalParkingBoy(parkinglots, normalParkingBoyStrategy);
+        Parkable parkingBoy = new ParkingBoy(parkinglots, normalParkingBoyStrategy);
 
         assertThat(parkingBoy.park(new Car(1)), is(0));
     }
@@ -36,7 +36,7 @@ public class NormalParkingBoyTest {
         parkinglots.add(new Parkinglot(0));
         parkinglots.add(new Parkinglot(2));
         parkinglots.add(new Parkinglot(2));
-        Parkable parkingBoy = new NormalParkingBoy(parkinglots, normalParkingBoyStrategy);
+        Parkable parkingBoy = new ParkingBoy(parkinglots, normalParkingBoyStrategy);
 
         assertThat(parkingBoy.park(new Car(1)), is(1));
     }
@@ -47,7 +47,7 @@ public class NormalParkingBoyTest {
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(0));
         parkinglots.add(new Parkinglot(0));
-        Parkable parkingBoy = new NormalParkingBoy(parkinglots, normalParkingBoyStrategy);
+        Parkable parkingBoy = new ParkingBoy(parkinglots, normalParkingBoyStrategy);
 
         assertThat(parkingBoy.park(new Car(1)), is(-1));
     }
@@ -57,7 +57,7 @@ public class NormalParkingBoyTest {
 
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(2));
-        NormalParkingBoy parkingBoy = new NormalParkingBoy(parkinglots, normalParkingBoyStrategy);
+        ParkingBoy parkingBoy = new ParkingBoy(parkinglots, normalParkingBoyStrategy);
         Car car = new Car(1);
         parkingBoy.park(car);
 
@@ -69,7 +69,7 @@ public class NormalParkingBoyTest {
 
         List<Parkinglot> parkinglots = new ArrayList<Parkinglot>();
         parkinglots.add(new Parkinglot(2));
-        NormalParkingBoy parkingBoy = new NormalParkingBoy(parkinglots, normalParkingBoyStrategy);
+        ParkingBoy parkingBoy = new ParkingBoy(parkinglots, normalParkingBoyStrategy);
         parkingBoy.park(new Car(1));
 
         assertThat(parkingBoy.unPark(2), is((Car) null));

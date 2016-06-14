@@ -26,8 +26,8 @@ public class ParkingPrinterTest {
     public void shouldPrintParkingManagerAndParkingBoyStringCorrectly() {
 
         ArrayList<Parkable> parkingBoys = new ArrayList<>();
-        parkingBoys.add(new NormalParkingBoy(new ArrayList<>(), null));
-        parkingBoys.add(new NormalParkingBoy(new ArrayList<>(), null));
+        parkingBoys.add(new ParkingBoy(new ArrayList<>(), null));
+        parkingBoys.add(new ParkingBoy(new ArrayList<>(), null));
         ParkingManager parkingManager = new ParkingManager(parkingBoys);
 
         parkingManager.print("");
@@ -54,8 +54,8 @@ public class ParkingPrinterTest {
         parkinglots2.add(parkinglot3);
 
         ArrayList<Parkable> parkingBoys = new ArrayList<>();
-        parkingBoys.add(new NormalParkingBoy(parkinglots1, null));
-        parkingBoys.add(new NormalParkingBoy(parkinglots2, null));
+        parkingBoys.add(new ParkingBoy(parkinglots1, null));
+        parkingBoys.add(new ParkingBoy(parkinglots2, null));
         ParkingManager parkingManager = new ParkingManager(parkingBoys);
 
         parkingManager.print("");
@@ -87,8 +87,8 @@ public class ParkingPrinterTest {
         parkinglots2.add(parkinglot3);
 
         ArrayList<Parkable> parkingBoys = new ArrayList<>();
-        parkingBoys.add(new NormalParkingBoy(parkinglots1, null));
-        parkingBoys.add(new NormalParkingBoy(parkinglots2, null));
+        parkingBoys.add(new ParkingBoy(parkinglots1, null));
+        parkingBoys.add(new ParkingBoy(parkinglots2, null));
 
         ArrayList<Parkable> parkingManagers = new ArrayList<>();
         ParkingManager parkingManager = new ParkingManager(parkingBoys);

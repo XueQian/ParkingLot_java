@@ -4,12 +4,12 @@ import com.thoughtworks.oo.strategy.ParkStrategy;
 
 import java.util.List;
 
-public class NormalParkingBoy implements Parkable {
+public class ParkingBoy implements Parkable {
 
     protected List<Parkinglot> parkinglots;
     protected ParkStrategy parkStrategy;
 
-    public NormalParkingBoy(List<Parkinglot> parkinglots, ParkStrategy parkStrategy) {
+    public ParkingBoy(List<Parkinglot> parkinglots, ParkStrategy parkStrategy) {
         this.parkinglots = parkinglots;
         this.parkStrategy = parkStrategy;
     }
