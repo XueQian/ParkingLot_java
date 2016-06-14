@@ -3,6 +3,10 @@ package com.thoughtworks.oo;
 import java.util.List;
 
 public class ParkingManager implements Parkable {
+    public List<Parkable> getParkingBoyList() {
+        return parkingBoyList;
+    }
+
     protected List<Parkable> parkingBoyList;
 
     public ParkingManager(List<Parkable> parkingBoyList) {
@@ -20,11 +24,20 @@ public class ParkingManager implements Parkable {
     }
 
     @Override
-    public void print() {
+    public void print(String string) {
+        System.out.println(string + "parkingManager:");
+        if (parkingBoyList.size() > 0) {
 
-        System.out.println("parkingManager:");
-        parkingBoyList.stream()
-                .peek(parkingBoy -> System.out.println("-parkingBoy" + parkingBoyList.indexOf(parkingBoy) + ":"))
-                .forEach(Parkable::print);
+            if (parkingBoyList.get(0).getClass() == ParkingManager.class) {
+                parkingBoyList.stream()
+                        .forEach((parkable) -> parkable.print("-"));
+
+            } else {
+                String finalString = string + "-";
+                parkingBoyList.stream()
+                        .peek(parkingBoy -> System.out.println(finalString + "parkingBoy" + parkingBoyList.indexOf(parkingBoy) + ":"))
+                        .forEach((parkable) -> parkable.print(finalString));
+            }
+        }
     }
 }
